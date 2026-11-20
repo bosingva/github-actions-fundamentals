@@ -24,7 +24,9 @@ jobs:
           echo "Kernel/OS details: $(uname -a)"
 
       - name: Print repository name
-        run: echo "Repository: ${{ github.repository }}"
+        run: |
+          echo "Repository: ${{ github.repository }}"
 
       - name: Print current branch
-        run: echo "Branch: ${{ github.ref_name }}"
+        run: echo '"Branch: ${{ github.ref_name }}"'
+        
