@@ -1,0 +1,30 @@
+name: Hello World
+
+on:
+  push:
+    branches:
+      - main
+    workflow_dispatch:  
+
+
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello from GitHub Actions"
+
+      - name: Print current date
+        run: date
+
+      - name: Print runner operating system
+        run: |
+          echo "Runner OS (GitHub context): ${{ runner.os }}"
+          echo "Kernel/OS details: $(uname -a)"
+
+      - name: Print repository name
+        run: echo "Repository: ${{ github.repository }}"
+
+      - name: Print current branch
+        run: echo "Branch: ${{ github.ref_name }}"
